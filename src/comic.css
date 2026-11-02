@@ -1,0 +1,178 @@
+﻿/* A four-panel introduction, read left to right and then top to bottom. */
+.comic-definitions { position: absolute; width: 0; height: 0; overflow: hidden; }
+.comic-introduction { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-bottom: 60px; }
+.comic-panel {
+  --comic-accent: #6b47ad;
+  --comic-tint: #eee5fa;
+  position: relative;
+  padding: 24px 26px 0;
+  border: 2.5px solid #393044;
+  border-radius: 5px 19px 5px 19px;
+  background: var(--comic-tint);
+  box-shadow: 5px 6px 0 #393044;
+  overflow: hidden;
+}
+.comic-make { --comic-accent: #a65626; --comic-tint: #fff0ce; }
+.comic-explore { --comic-accent: #2d63a9; --comic-tint: #e4efff; }
+.comic-life { --comic-accent: #246c54; --comic-tint: #e0f3e7; }
+.comic-panel .comic-caption { display: flex; gap: 10px; align-items: center; font-size: 15px; color: #45394e; font-weight: 700; line-height: 1.5; margin: 0 0 18px; }
+.comic-caption > span { display: grid; place-items: center; width: 31px; height: 29px; background: #393044; color: white; font-size: 14px; border-radius: 4px; rotate: -5deg; }
+.comic-panel .speech-bubble { position: relative; z-index: 2; background: white; border: 2px solid #393044; border-radius: 23px; padding: 20px 18px; margin: 0; text-align: center; font-size: clamp(20px, 2vw, 26px); line-height: 1.6; font-weight: 600; letter-spacing: -.8px; word-break: keep-all; overflow-wrap: anywhere; box-shadow: 2px 3px 0 #39304412; }
+.speech-bubble::after { content: ''; position: absolute; bottom: -12px; left: 42%; width: 20px; height: 20px; background: white; border-bottom: 2px solid #393044; border-right: 2px solid #393044; transform: skewY(25deg) rotate(37deg); }
+.speech-bubble strong { color: var(--comic-accent); font-weight: 900; }
+.comic-scene { position: relative; height: 220px; margin-top: 16px; background: radial-gradient(#7a678126 1px, transparent 1px) center / 12px 12px; }
+.comic-character { position: absolute; width: 190px; height: 210px; bottom: 0; left: 50%; transform: translateX(-50%); }
+.comic-doodle { position: absolute; color: var(--comic-accent); font-size: 48px; }
+.doodle-left { left: 9%; top: 28px; rotate: -12deg; }
+.doodle-right { right: 9%; top: 76px; rotate: 12deg; }
+.comic-sticker { position: absolute; bottom: 30px; right: 0; padding: 8px 12px; border: 2px solid #393044; background: #ffe58f; color: #493947; font-size: 14px; font-weight: 800; rotate: -9deg; }
+.comic-panel .comic-narration { position: relative; z-index: 3; margin: 0 -26px; padding: 17px 20px; background: #fffdf6; border-top: 2px solid #393044; color: #393044; font-size: 17px; line-height: 1.7; font-weight: 600; text-align: center; word-break: keep-all; overflow-wrap: anywhere; }
+.scene-make .comic-character { left: 32%; }
+.comic-workbench { position: absolute; bottom: 8px; right: 0; width: 55%; height: 110px; background: #ffe2a4; border-bottom: 8px solid #aa6c40; color: #8b522d; }
+.comic-sound { position: absolute; top: 40px; right: 7%; font-size: 28px; font-weight: 900; color: #9c5626; rotate: 12deg; }
+.scene-explore .comic-character { left: 72%; width: 170px; height: 188px; }
+.comic-screen { position: absolute; left: 3%; top: 34px; width: 52%; padding: 13px; border: 3px solid #393044; border-radius: 12px; background: #fffdf6; rotate: -5deg; box-shadow: 4px 5px 0 #9bb8e1; }
+.comic-screen > span { font-size: 16px; font-weight: 800; color: #315c95; }
+.comic-screen > div { display: flex; gap: 14px; align-items: center; margin-top: 9px; color: #315c95; }
+.comic-screen b { font-size: 55px; line-height: 1; }
+.comic-screen div span { font-size: 14px; line-height: 1.65; }
+.scene-explore .doodle-left { left: 62%; top: 8px; font-size: 32px; }
+.comic-orbit-word { position: absolute; padding: 6px 12px; border: 2px solid #408268; background: #fffdf6; color: #246c54; font-size: 15px; font-weight: 800; border-radius: 20px; z-index: 1; }
+.word-question { top: 25px; left: 3%; rotate: -10deg; }
+.word-idea { top: 27px; right: 0; rotate: 9deg; }
+.word-action { bottom: 20px; right: 2%; rotate: -8deg; }
+.philosophy-intro { margin-bottom: 28px; }
+.philosophy-intro .eyebrow { margin-bottom: 8px; font-size: 12px; }
+.philosophy-intro h3 { font-size: 26px; margin: 0; line-height: 1.5; }
+@media (max-width: 700px) {
+  .comic-introduction { grid-template-columns: 1fr; gap: 27px; margin-bottom: 48px; }
+  .comic-panel { padding: 20px 20px 0; }
+  .comic-panel .speech-bubble { font-size: 21px; padding: 17px 12px; }
+  .comic-panel .comic-narration { margin-inline: -20px; padding: 15px 16px; font-size: 17px; }
+  .comic-panel .comic-caption { font-size: 14px; }
+  .comic-scene { height: 210px; }
+  .comic-sticker { font-size: 12px; padding: 7px 8px; }
+  .comic-screen { left: 0; }
+  .comic-orbit-word { font-size: 13px; padding: 6px 9px; }
+  .philosophy-intro h3 { font-size: 23px; }
+}
+/* Continue the same comic language through every chapter below the introduction. */
+#about, #projects { position: relative; }
+.research-section { background: #f3effa; border-block: 2px solid #393044; }
+.section-heading .eyebrow, .links-section .eyebrow, .philosophy-intro .eyebrow {
+  display: inline-flex; background: #fff0b8; border: 1.5px solid #393044;
+  color: #49384e; padding: 5px 10px; border-radius: 3px; letter-spacing: 1px;
+  box-shadow: 2px 2px 0 #393044; line-height: 1.6;
+}
+.section-heading > p { color: #45394e; }
+.lesson-panel, .project-comic, .connection-comic {
+  --comic-accent: var(--point);
+  --comic-tint: var(--tint);
+  display: flex; flex-direction: column;
+  padding: 20px 20px 0;
+}
+.lesson-panel .speech-bubble, .project-comic .speech-bubble {
+  font-size: 22px; min-height: 108px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 17px 12px; font-weight: 800; color: var(--comic-accent);
+}
+.lesson-panel .comic-caption, .project-comic .comic-caption { font-size: 14px; }
+.lesson-scene, .project-comic-scene { height: 205px; margin-top: 18px; }
+.lesson-scene .comic-character, .project-comic-scene .comic-character {
+  left: 29%; width: 150px; height: 165px;
+}
+.lesson-object, .project-comic-object {
+  position: absolute; width: 39%; height: 100px; right: 0; bottom: 15px;
+  padding: 11px; border: 2px solid #393044; border-radius: 9px;
+  background: #fffdf6; color: var(--comic-accent); rotate: 6deg;
+  box-shadow: 3px 4px 0 color-mix(in srgb, var(--comic-accent) 30%, white);
+}
+.lesson-sound {
+  position: absolute; top: 10px; right: 0; max-width: 90%;
+  color: var(--comic-accent); font-size: 18px; font-weight: 900;
+  rotate: -5deg; letter-spacing: -.6px;
+}
+.lesson-panel .comic-narration { margin: auto -20px 0; min-height: 124px; font-size: 17px; padding: 17px 19px; }
+.learning-flow {
+  width: fit-content; max-width: 100%; margin: 32px auto 0; padding: 12px 19px;
+  background: #fff0b8; border: 2px solid #393044; color: #49384e;
+  box-shadow: 3px 3px 0 #393044; border-radius: 5px; flex-wrap: wrap; row-gap: 5px;
+}
+.learning-flow b { color: #6e5279; }
+.research-note { width: fit-content; max-width: 100%; margin-inline: auto; padding: 15px 21px; border: 2px solid #393044; border-radius: 23px 23px 23px 4px; background: #fffdf6; box-shadow: 3px 3px 0 #393044; }
+.research-note p { font-size: 16px; color: #45394e; }
+.research-note > span { color: #7652af; flex-shrink: 0; }
+.project-comic-copy { display: flex; flex-direction: column; flex: 1; margin: 0 -20px; padding: 20px; background: #fffdf6; border-top: 2px solid #393044; }
+.project-comic-copy .project-status { margin-bottom: 12px; font-size: 14px; font-weight: 700; }
+.project-comic-copy .project-description { font-size: 17px; line-height: 1.8; color: #493e51; margin-bottom: 18px; }
+.project-comic-copy .tags { margin-top: auto; margin-bottom: 18px; }
+.project-comic-copy .tags span { font-size: 13px; font-weight: 600; color: #5d456c; }
+.project-comic-copy .project-actions, .project-comic-copy .project-soon { border-top: 1.5px dashed #b5a3bd; }
+.project-comic-copy .project-actions a { font-size: 14px; border: 2px solid #393044; border-radius: 5px; box-shadow: 2px 2px 0 #393044; padding: 10px 12px; }
+.project-comic-copy .project-soon { font-size: 15px; color: #64516e; }
+.links-section { align-items: center; border-top: 2px solid #393044; }
+.links-section > div:first-child > p:last-child { font-size: 17px; }
+.connection-comic .speech-bubble { font-size: 23px; }
+.connection-scene { height: 190px; }
+.connection-scene .comic-character { left: 32%; height: 180px; width: 172px; }
+.connection-icon { position: absolute; width: 75px; height: 75px; right: 10%; bottom: 28px; rotate: 10deg; color: #493459; }
+.connection-comic .social-link { margin: 0 -20px; padding: 20px; border: 0; border-top: 2px solid #393044; border-radius: 0; background: #fffdf6; }
+.connection-comic .social-link:hover { transform: none; background: #efe6fc; }
+.connection-comic .social-link small { font-size: 15px; }
+.footer { border-top: 2px solid #393044; background: #f6e9da; }
+.comic-ending { max-width: 760px; margin-inline: auto; }
+.ending-caption { display: inline-block; padding: 6px 12px; background: #393044; color: white; font-size: 15px; font-weight: 700; rotate: -2deg; margin: 0 0 23px; }
+.ending-bubble { position: relative; border: 2.5px solid #393044; border-radius: 35px; background: #fffdf6; padding: 22px 15px; box-shadow: 5px 5px 0 #393044; }
+.ending-bubble::after { content: ''; position: absolute; bottom: -14px; left: 49%; width: 23px; height: 23px; background: #fffdf6; border-right: 2.5px solid #393044; border-bottom: 2.5px solid #393044; transform: rotate(45deg); }
+.ending-bubble p { margin: 0; font-size: clamp(23px, 3vw, 34px); line-height: 1.7; font-weight: 800; letter-spacing: -1px; }
+.ending-scene { position: relative; height: 210px; margin-top: 20px; }
+.ending-scene .comic-character { height: 200px; width: 190px; }
+.ending-scene > span { position: absolute; left: 7%; top: 70px; font-size: 20px; font-weight: 800; color: #7652af; rotate: -10deg; }
+.ending-scene > b { position: absolute; right: 18%; top: 60px; font-size: 50px; color: #cf8433; }
+.ending-signature { margin: 0 0 32px; border-top: 2px solid #393044; padding-top: 15px; font-size: 17px; font-weight: 700; color: #493e51; }
+.footer-bottom { border-top-color: #c8ad96; }
+@media (max-width: 1050px) and (min-width: 701px) {
+  .lesson-panel .speech-bubble, .project-comic .speech-bubble { font-size: 21px; }
+}
+@media (max-width: 700px) {
+  .lesson-panel .speech-bubble, .project-comic .speech-bubble { min-height: 0; font-size: 22px; }
+  .lesson-panel .comic-narration { min-height: 0; }
+  .lesson-scene, .project-comic-scene { height: 210px; }
+  .lesson-scene .comic-character, .project-comic-scene .comic-character { height: 185px; width: 175px; }
+  .lesson-object, .project-comic-object { height: 110px; }
+  .research-note { padding: 13px 15px; }
+  .research-note p { font-size: 16px; }
+  .connection-comic .speech-bubble { font-size: 21px; }
+  .ending-scene > span { left: 0; top: 25px; font-size: 16px; }
+  .ending-scene > b { right: 4%; top: 58px; font-size: 35px; }
+  .ending-caption { font-size: 13px; }
+  .ending-signature { font-size: 15px; }
+}
+/* Topic illustrations carry each scene; the character appears only in the greeting. */
+.lesson-object, .project-comic-object {
+  left: 50%; right: auto; bottom: 18px;
+  transform: translateX(-50%); rotate: 0deg;
+  width: 55%; height: 125px; padding: 15px;
+}
+.lesson-sound { top: 8px; right: 8px; }
+.scene-make .comic-workbench { width: 86%; right: 7%; bottom: 22px; height: 125px; }
+.scene-make .comic-sound { top: 10px; right: 8%; }
+.scene-explore .comic-screen { width: 72%; left: 14%; top: 33px; rotate: -3deg; padding: 18px; }
+.scene-explore .doodle-left { top: 3px; left: 4%; }
+.scene-explore .comic-screen > div { justify-content: center; gap: 28px; }
+.life-idea { position: absolute; left: 50%; top: 48%; transform: translate(-50%, -50%); font-size: 110px; line-height: 1; color: #4a9976; text-shadow: 4px 4px #fffdf6; }
+.scene-life .word-question { left: 8%; top: 26px; }
+.scene-life .word-idea { right: 4%; top: 29px; }
+.scene-life .word-action { right: 13%; bottom: 15px; }
+.scene-life .doodle-right { right: 1%; top: 98px; font-size: 30px; }
+.connection-scene { height: 170px; }
+.connection-icon { width: 90px; height: 90px; right: auto; left: 50%; bottom: 14px; transform: translateX(-50%); rotate: 0deg; }
+.ending-scene { height: 112px; display: flex; align-items: center; justify-content: center; gap: 24px; }
+.ending-scene > span, .ending-scene > b { position: static; rotate: 0deg; }
+.ending-scene > span { font-size: 21px; }
+.ending-scene > b { font-size: 42px; }
+@media (max-width: 700px) {
+  .lesson-object, .project-comic-object { height: 125px; }
+  .ending-scene > span { font-size: 18px; }
+  .ending-scene > b { font-size: 35px; }
+}

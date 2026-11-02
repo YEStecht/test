@@ -1,0 +1,94 @@
+﻿/* Five branches share the same origin; descriptions stay below the map. */
+.technology-explorer {
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+.radial-map {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+}
+.radial-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(#b6a4cf80 1px, transparent 1px) 0 0 / 20px 20px;
+  mask-image: radial-gradient(ellipse, #000, transparent 73%);
+}
+.radial-lines { position: absolute; inset: 0; width: 100%; height: 100%; }
+.radial-lines circle { fill: none; stroke: #d9cce9; stroke-width: 1; stroke-dasharray: 3 8; }
+.radial-lines path { fill: none; stroke: #c5afd9; stroke-width: 2; transition: stroke .25s, stroke-width .25s; }
+.radial-lines .branch-active { stroke: var(--branch-color); stroke-width: 4; }
+.radial-center {
+  position: absolute;
+  left: 50%; top: 48%;
+  transform: translate(-50%, -50%);
+  width: 31%; aspect-ratio: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 5px;
+  border-radius: 50%; border: 2px solid #b49add;
+  background: radial-gradient(circle at 30% 20%, #f5edff, #d8c3f5);
+  box-shadow: 0 12px 35px #7951a91a, 0 0 0 9px #e9dcf53d;
+  color: #51307f;
+}
+.radial-center strong { font-size: clamp(28px, 3.2vw, 46px); line-height: 1.25; letter-spacing: -2px; }
+.radial-center > span { font-size: 12px; font-weight: 600; }
+.radial-center > span:last-child { font-size: 9px; letter-spacing: 1px; }
+.radial-node {
+  position: absolute; left: var(--node-x); top: var(--node-y);
+  transform: translate(-50%, -50%);
+  width: 24%; aspect-ratio: 1;
+  border-radius: 23%; border: 1.5px solid color-mix(in srgb, var(--node-color) 25%, white);
+  padding: 9px 4px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+  background: var(--node-tint); color: var(--node-color);
+  box-shadow: 0 5px 15px #45315c0a;
+  transition: scale .2s, box-shadow .2s, border-color .2s;
+  z-index: 1;
+}
+.radial-node[data-technology=manufacturing] { --node-x: 50%; --node-y: 14%; }
+.radial-node[data-technology=construction] { --node-x: 84%; --node-y: 39%; }
+.radial-node[data-technology=transportation] { --node-x: 71%; --node-y: 79%; }
+.radial-node[data-technology=biotechnology] { --node-x: 29%; --node-y: 79%; }
+.radial-node[data-technology=information] { --node-x: 16%; --node-y: 39%; }
+.radial-node > span:last-child { font-size: clamp(12px, 1.25vw, 16px); font-weight: 800; white-space: nowrap; letter-spacing: -.6px; }
+.radial-icon { display: block; width: 52%; aspect-ratio: 1; }
+.radial-node:hover, .radial-node[aria-pressed=true] {
+  scale: 1.06;
+  border-color: var(--node-color);
+  box-shadow: 0 9px 22px color-mix(in srgb, var(--node-color) 18%, transparent);
+}
+.radial-node:focus-visible { outline: 3px solid var(--node-color); outline-offset: 4px; }
+.explorer-hint { margin: -9px 0 15px; text-align: center; font-size: 14px; line-height: 1.6; color: #605268; }
+.technology-detail {
+  --detail-color: #65418d; --detail-tint: #f0e8fa;
+  padding: 21px 24px; min-height: 192px;
+  border-radius: 16px; border: 1px solid color-mix(in srgb, var(--detail-color) 25%, white);
+  border-left: 4px solid var(--detail-color); background: var(--detail-tint);
+  transition: background .25s, border-color .25s;
+}
+.technology-detail .detail-label { font-size: 11px; font-weight: 700; letter-spacing: .6px; color: var(--detail-color); margin: 0 0 8px; }
+.technology-detail h2 { font-size: 23px; line-height: 1.4; margin: 0 0 9px; color: var(--detail-color); letter-spacing: -.7px; }
+.technology-detail p:last-child { font-size: 17px; line-height: 1.8; color: #45394f; margin: 0; word-break: keep-all; overflow-wrap: anywhere; }
+@media (min-width: 701px) and (max-width: 1050px) {
+  .hero { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .radial-center > span:first-child { font-size: 10px; }
+  .radial-center > span:last-child { font-size: 7px; }
+  .radial-node > span:last-child { font-size: 11px; }
+  .technology-detail { padding: 18px; min-height: 220px; }
+}
+@media (max-width: 700px) {
+  .technology-explorer { max-width: 440px; }
+  .radial-center strong { font-size: clamp(28px, 8vw, 38px); }
+  .radial-center > span:first-child { font-size: 11px; }
+  .radial-center > span:last-child { font-size: 8px; letter-spacing: .3px; }
+  .radial-node > span:last-child { font-size: clamp(11px, 3.3vw, 15px); }
+  .radial-node { gap: 2px; }
+  .explorer-hint { font-size: 13px; }
+  .technology-detail { padding: 19px; min-height: 218px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radial-node, .radial-lines path, .technology-detail { transition: none; }
+}

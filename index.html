@@ -1,13 +1,114 @@
-<!doctype html>
-<html lang="en">
+﻿<!doctype html>
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>test</title>
+    <meta name="theme-color" content="#fbfaf7" />
+    <meta name="description" content="기술교사이자 기술교육 연구자 양은선. 만들고 체험하며 내 세상을 만드는 기술, 교육 철학과 연구 관심사, 수업 프로젝트를 소개합니다." />
+    <title>양은선 — 기술을 배우고, 만들고, 탐구하다</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
-    <div id="app"></div>
+    <a class="skip-link" href="#main">본문으로 바로가기</a>
+    <header class="header">
+      <a class="brand" href="#home" aria-label="양은선 홈"><span class="brand-mark">y<span>✳</span></span> 양은선<span class="brand-dot">.</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="메뉴 열기"><span></span><span></span></button>
+      <nav id="navigation" aria-label="주 메뉴">
+        <a href="#home" class="active" aria-current="location">Home</a><a href="#about">About</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#links">Links <span>↗</span></a>
+      </nav>
+    </header>
+    <main id="main">
+      <section id="home" class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> TECHNOLOGY EDUCATOR & RESEARCHER</p>
+          <p class="hero-intro">기술교사 · 기술교육 연구자<br /><strong>양은선</strong>입니다.</p>
+          <h1>만들고 체험하며<br /><span class="gradient">내 세상을 만드는</span><br />기술<span class="title-star">✳</span></h1>
+          <p class="hero-description">직접 만들고 탐구하며,<br />배움이 삶으로 이어지는 기술교육을 꿈꿉니다.</p>
+          <div class="tags hero-tags"><span>기술교육</span><span>창의적 문제해결</span><span>탐구와 실천</span></div>
+          <div class="hero-actions"><a class="button primary" href="#about">나의 이야기 <span>↗</span></a><a class="button secondary" href="#projects">연구 및 프로젝트 <span>→</span></a></div>
+        </div>
+        <div class="technology-explorer" aria-label="기술의 다섯 영역 탐색">
+          <div class="radial-map">
+            <div class="radial-grid" aria-hidden="true"></div>
+            <svg class="radial-lines" viewBox="0 0 500 500" aria-hidden="true">
+              <circle cx="250" cy="240" r="170" />
+              <path data-branch="manufacturing" d="M250 240 250 70" />
+              <path data-branch="construction" d="M250 240 420 195" />
+              <path data-branch="transportation" d="M250 240 355 395" />
+              <path data-branch="biotechnology" d="M250 240 145 395" />
+              <path data-branch="information" d="M250 240 80 195" />
+            </svg>
+            <div class="radial-center"><span>배움의 중심</span><strong>기술</strong><span>TECHNOLOGY</span></div>
+            <div id="technology-nodes" role="group" aria-label="설명을 볼 기술 영역 선택"></div>
+          </div>
+          <p class="explorer-hint" id="technology-hint">영역에 마우스를 올리거나 눌러 보세요.</p>
+          <div class="technology-detail" id="technology-detail" role="status" aria-live="polite" aria-atomic="true">
+            <p class="detail-label">다섯 영역, 연결되는 가능성</p>
+            <h2>기술로 넓어지는 세상</h2>
+            <p>주변의 기술 영역을 선택하면 설명을 볼 수 있어요.</p>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#about"><span>↓</span> SCROLL TO EXPLORE</a>
+      </section>
+      <div class="word-strip" aria-hidden="true"><span>LEARN BY MAKING</span><b>✳</b><span>THINK CREATIVELY</span><b>✳</b><span>CONNECT TO LIFE</span><b>✳</b><span>KEEP EXPLORING</span></div>
+      <section id="about" class="section-shell content-section">
+        <div class="section-heading reveal"><div><p class="eyebrow">01 / ABOUT & PHILOSOPHY</p><h2>네 컷으로 만나는 나<span class="accent-purple">.</span></h2></div><p>기술을 가르치고, 배움의 가능성을 탐구하는 이야기.</p></div>
+        <svg class="comic-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+          <symbol id="teacher-character" viewBox="0 0 200 210">
+            <path d="M43 203v-32c0-31 25-49 57-49s57 18 57 49v32" fill="#8c70df" stroke="#332e46" stroke-width="4"/>
+            <path d="m82 130 18 22 18-22M100 152v51" fill="#fff9e9" stroke="#332e46" stroke-width="3"/>
+            <path d="M53 72c-3-35 16-55 47-55 33 0 53 22 48 59l-5 38H56Z" fill="#42354e" stroke="#332e46" stroke-width="4"/>
+            <ellipse cx="100" cy="84" rx="40" ry="45" fill="#ffe2c5" stroke="#332e46" stroke-width="3"/>
+            <path d="M60 67c13-2 28-10 37-24 10 15 24 23 44 23-3-27-19-38-41-38-23 0-37 14-40 39" fill="#42354e"/>
+            <circle cx="84" cy="82" r="3" fill="#332e46"/><circle cx="116" cy="82" r="3" fill="#332e46"/>
+            <path d="M91 99q9 9 18 0" fill="none" stroke="#332e46" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="74" cy="94" rx="7" ry="4" fill="#f5ac9e"/><ellipse cx="126" cy="94" rx="7" ry="4" fill="#f5ac9e"/>
+            <path d="m49 164-19-29m121 29 20-35" fill="none" stroke="#332e46" stroke-width="17" stroke-linecap="round"/>
+            <path d="m49 164-19-29m121 29 20-35" fill="none" stroke="#ffe2c5" stroke-width="11" stroke-linecap="round"/>
+          </symbol>
+        </defs></svg>
+        <div class="comic-introduction" aria-label="네 컷으로 만나는 양은선의 이야기">
+          <article class="comic-panel comic-hello reveal">
+            <p class="comic-caption"><span>01</span> 만나서 반가워요!</p>
+            <h3 class="speech-bubble">안녕하세요!<br />기술교사 <strong>양은선</strong>입니다.</h3>
+            <div class="comic-scene scene-hello" aria-hidden="true"><span class="comic-doodle doodle-left">✦</span><svg class="comic-character" viewBox="0 0 200 210"><use href="#teacher-character"/></svg><span class="comic-sticker">기술교육 연구자</span><span class="comic-doodle doodle-right">✳</span></div>
+            <p class="comic-narration">가르치고, 만들고, 탐구합니다.</p>
+          </article>
+          <article class="comic-panel comic-make reveal">
+            <p class="comic-caption"><span>02</span> 저의 수업에서는</p>
+            <h3 class="speech-bubble">“왜 그럴까?” 이해하고,<br /><strong>직접 만들어 봐요!</strong></h3>
+            <div class="comic-scene scene-make" aria-hidden="true"><div class="comic-workbench"><svg viewBox="0 0 220 110" fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round"><path d="M10 82h200M25 82V29h170v53M25 29l42 53 43-53 43 53 42-53M67 29v53m43-53v53m43-53v53"/></svg></div><span class="comic-sound">뚝딱!</span></div>
+            <p class="comic-narration">원리를 이해하고 실습하며 내 것으로.</p>
+          </article>
+          <article class="comic-panel comic-explore reveal">
+            <p class="comic-caption"><span>03</span> 제가 탐구하는 것은</p>
+            <h3 class="speech-bubble">AI와 디지털 도구로<br /><strong>배움의 경험을 더 넓게!</strong></h3>
+            <div class="comic-scene scene-explore" aria-hidden="true"><div class="comic-screen"><span>AI + 수업</span><div><b>↗</b><span>탐구<br />실습<br />발견</span></div></div><span class="comic-doodle doodle-left">✧</span></div>
+            <p class="comic-narration">실습의 제약을 보완할 방법을 연구해요.</p>
+          </article>
+          <article class="comic-panel comic-life reveal">
+            <p class="comic-caption"><span>04</span> 결국, 제가 꿈꾸는 배움</p>
+            <h3 class="speech-bubble">배운 기술이<br /><strong>내 삶을 바꿀 수 있도록.</strong></h3>
+            <div class="comic-scene scene-life" aria-hidden="true"><span class="life-idea">✦</span><span class="comic-orbit-word word-question">발견</span><span class="comic-orbit-word word-idea">아이디어</span><span class="comic-orbit-word word-action">실천</span><span class="comic-doodle doodle-right">✦</span></div>
+            <p class="comic-narration">일상의 문제를 스스로 해결하는 힘을 길러요.</p>
+          </article>
+        </div>
+        <div class="philosophy-intro reveal"><p class="eyebrow">MY TEACHING PHILOSOPHY</p><h3>다음 장면은, 저의 수업이에요</h3></div>
+        <div id="philosophy-grid" class="three-grid"></div>
+        <p class="learning-flow reveal"><span>원리 이해</span><b>→</b><span>실습과 적용</span><b>→</b><span>삶과 연결</span></p>
+      </section>
+      <section id="research" class="research-section"><div class="section-shell content-section">
+        <div class="section-heading reveal"><div><p class="eyebrow">CHAPTER 02 / RESEARCH</p><h2>주요 연구 관심사<span class="accent-orange">.</span></h2></div><p>기술로 넓히는 배움의 가능성.</p></div>
+        <div id="research-grid" class="three-grid"></div>
+        <div class="research-note reveal"><span>✳</span><p>디지털 기술로 실습의 제약을 보완하고,<br class="mobile-break" /> <strong>배움의 경험을 확장합니다.</strong></p></div>
+      </div></section>
+      <section id="projects" class="section-shell content-section">
+        <div class="section-heading reveal"><div><p class="eyebrow">CHAPTER 03 / PROJECTS</p><h2>수업 및 연구 프로젝트<span class="accent-blue">.</span></h2></div><p>만들고 탐구한 배움의 도구들.</p></div>
+        <div id="project-grid" class="three-grid"></div>
+      </section>
+      <section id="links" class="section-shell links-section reveal"><div><p class="eyebrow">마지막 장 / 함께 이어가는 이야기</p><h2>Connect & Links<span class="accent-purple">.</span></h2><p>탐구의 기록을 나눕니다.</p></div><div id="related-links"></div></section>
+    </main>
+    <footer class="footer"><div class="section-shell"><div class="comic-ending"><p class="ending-caption">그리고, 저의 이야기는 계속됩니다.</p><div class="ending-bubble"><p>기술을 배우고, 만들고,<br /><span class="gradient">삶에 적용하는 교육</span>을 꿈꿉니다.</p></div><div class="ending-scene" aria-hidden="true"><span>함께 만들어요!</span><b>✦</b></div><p class="ending-signature">기술교사 · 기술교육 연구자 양은선</p></div><div class="footer-bottom"><a class="brand" href="#home">양은선<span class="brand-dot">.</span></a><span>LEARN · MAKE · EXPLORE</span><a href="#home">처음으로 ↑</a></div></div></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
